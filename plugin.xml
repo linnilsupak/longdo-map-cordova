@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="longdo-map-cordova" version="1.0.0">
+    <name>Longdo Map</name>
+    <description>Longdo Map Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>map,gis</keywords>
+    <dependency id="cordova-plugin-file" version=">=6.0.2" />
+    <dependency id="cordova-plugin-file-transfer" url="https://github.com/apache/cordova-plugin-file-transfer" commit="master" />
+    <dependency id="cordova-plugin-network-information" version=">=2.0.2" />
+    <js-module src="www/longdo-map.js" name="longdo-map">
+        <clobbers target="longdo-map" />
+    </js-module>
+    <js-module src="www/longdo-map-cordova.min.js" name="longdo-map-cordova">
+        <clobbers target="longdo-map-cordova" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <preference name="scheme" value="app" />
+            <preference name="hostname" value="localhost" />
+        </config-file>
+    </platform>
+</plugin>
